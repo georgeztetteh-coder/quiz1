@@ -1,165 +1,121 @@
-/* Reset */
-* { 
-  box-sizing: border-box; 
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body { 
-  margin: 0; 
-  font-family: Arial, sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* =====================
-   Header
-===================== */
-
+/* Header */
 .header {
-  display: flex;
-  justify-content: space-between;   /* logo left, nav right */
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #005f73;
+    color: #fff;
 }
 
 .logo {
-  font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.nav {
-  display: flex;
+.nav a {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.nav a { 
-  margin-left: 16px;
-  text-decoration: none;
-  color: black;
+.nav a:hover {
+    color: #94d2bd;
 }
 
-/* =====================
-   Container
-===================== */
-
-.container { 
-  max-width: 1000px;     /* required */
-  margin: 0 auto;        /* center */
-  padding: 0 16px;       /* prevent edge touching */
-}
-
-/* =====================
-   Hero Section
-===================== */
-
+/* Hero Section */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #e0fbfc;
 }
 
 .hero-text {
-  flex: 1;
+    flex: 1;
 }
 
-.hero-card {
-  width: 240px;
-  padding: 16px;
-  border: 1px solid #ddd;
-  margin-left: 40px;   /* pushes card right */
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* =====================
-   Grid Section
-===================== */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* Desktop default */
-  gap: 12px;
-  padding: 20px 0;
+.hero-text p {
+    font-size: 1rem;
 }
 
-.card {
-  border: 1px solid #ddd;
-  padding: 18px;
-  transition: 0.3s;
+.hero-image {
+    flex: 1;
+    text-align: center;
 }
 
-/* Hover effect */
-.card:hover {
-  background-color: #f2f2f2;
-  transform: translateY(-3px);
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 8px;
 }
 
-/* Button */
-.btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid black;
-  text-decoration: none;
-  transition: 0.3s;
+/* Insights Section */
+.insights {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.btn:hover {
-  background-color: black;
-  color: white;
+.insights h2 {
+    margin-bottom: 1rem;
 }
 
-/* =====================
-   Tablet Breakpoint
-   601px–900px
-===================== */
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.insights h3 {
+    margin-top: 1rem;
 }
 
-/* =====================
-   Mobile Breakpoint
-   0px–600px
-===================== */
+/* Gallery */
+.gallery {
+    padding: 2rem;
+    text-align: center;
+}
 
+.gallery img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 1rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+    }
 
-  /* Header stacks */
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
 
-  .nav {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .nav a {
-    margin: 6px 0;
-  }
-
-  /* Hero stacks */
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-card {
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  /* Grid becomes 1 column */
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =====================
-   Footer
-===================== */
-
-.footer {
-  padding: 16px;
-  text-align: center;
-  border-top: 1px solid #ddd;
+    .nav a {
+        margin: 0.5rem 0;
+    }
 }
